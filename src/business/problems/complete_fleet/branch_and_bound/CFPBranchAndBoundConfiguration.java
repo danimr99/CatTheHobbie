@@ -17,6 +17,7 @@ public class CFPBranchAndBoundConfiguration extends CommonConfiguration {
     public CFPBranchAndBoundConfiguration(CFPBranchAndBoundConfiguration configuration, int centersQty) {
         super(configuration.getK());
         this.centers = Arrays.copyOf(configuration.centers, centersQty);
+        // this.marking = configuration.getMarking();
     }
 
     public CFPBranchAndBoundMarking getMarking() {
@@ -29,5 +30,9 @@ public class CFPBranchAndBoundConfiguration extends CommonConfiguration {
 
     public int getCenterPosition(int position) {
         return this.centers[position];
+    }
+
+    public int[] getCenters() {
+        return centers;
     }
 }

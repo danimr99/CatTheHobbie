@@ -34,19 +34,21 @@ public class CFPBranchAndBound extends BranchAndBound {
     @Override
     public void run() {
         CFPBranchAndBoundConfiguration bestConfiguration = this.branchAndBound();
+        int usedCenters = 0;
 
         if (bestConfiguration != null) {
             this.console.showMessage("Solutions found: " + this.solutionsFoundCounter, true);
 
             this.console.showMessage("Best solution: ", true);
-            for (int i = 0; i < this.centers.size(); i++) {
+            for (int i = 0; i < bestConfiguration.getCenters().length; i++) {
                 if (bestConfiguration.getCenterPosition(i) == CFPBranchAndBound.CENTER_TAKEN) {
                     this.console.showMessage(" - " + centers.get(i).getName(), true);
+                    usedCenters++;
                 }
             }
 
             this.console.spacing();
-            this.console.showMessage("Minimum centers required: " + this.minimumUsedCenters, true);
+            this.console.showMessage("Minimum centers required: " + usedCenters, true);
         } else {
             this.console.showError("There is not a solution", true);
         }
