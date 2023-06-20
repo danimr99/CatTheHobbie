@@ -52,7 +52,7 @@ public class CFPBacktracking extends Backtracking {
             this.console.showMessage("Solutions found: " + this.solutionsFoundCounter, true);
 
             this.console.showMessage("Best solution: ", true);
-            for (int i = 0; i < this.centers.size(); i++) {
+            for (int i = 0; i < this.bestConfiguration.length; i++) {
                 if (this.bestConfiguration[i] == 1) {
                     this.console.showMessage(" - " + centers.get(i).getName(), true);
                 }

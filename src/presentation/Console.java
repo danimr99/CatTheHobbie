@@ -60,10 +60,12 @@ public class Console {
         System.out.println("\t2 - M");
         System.out.println("\t3 - S");
         System.out.println("\t4 - XS");
+        System.out.println("\t5 - XXS");
+
         this.spacing();
 
 
-        int option = askForInteger("Enter an option: ", 1, 4);
+        int option = askForInteger("Enter an option: ", 1, 5);
 
         switch (option) {
             case 1 -> {
@@ -77,6 +79,9 @@ public class Console {
             }
             case 4 -> {
                 return "XS";
+            }
+            case 5 -> {
+                return "XXS";
             }
             default -> {
                 return null;
